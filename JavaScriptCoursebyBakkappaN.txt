@@ -1,0 +1,598 @@
+============
+Variable
+============
+> var color;
+undefined
+> color = 'blue';
+'blue'
+> color
+'blue'
+> color = 'red';
+'red'
+> color
+'red'
+> var color2 = 'white';
+undefined
+> color2
+'white'
+> var COLOR2 = 'THIS IS A CASE SENSITIVE';
+undefined
+> COLOR2
+'THIS IS A CASE SENSITIVE'
+> color2
+'white'
+>
+>
+> var colorName = 'black'
+undefined
+> colorName
+'black'
+>
+
+====================
+Variable mutability
+====================
+> const week = 7;
+undefined
+> week
+7
+> week = 10;
+Uncaught TypeError: Assignment to constant variable.
+>
+>
+> const month = 12;
+undefined
+> month
+12
+> month = 100;
+Uncaught TypeError: Assignment to constant variable.
+>
+
+=================
+Reserved keywords
+=================
+> var var;
+var var;
+    ^^^
+
+Uncaught SyntaxError: Unexpected token 'var'
+>
+> var for;
+var for;
+    ^^^
+
+Uncaught SyntaxError: Unexpected token 'for'
+>
+> var if;
+var if;
+    ^^
+
+Uncaught SyntaxError: Unexpected token 'if'
+
+==============
+String
+==============
+> var color1 = "red";
+undefined
+> color1
+'red'
+> var color2 = 'green';
+undefined
+> color2
+'green'
+> var nestedStr = "welcome to "javascript" tutorial";
+var nestedStr = "welcome to "javascript" tutorial";
+                             ^^^^^^^^^^
+
+Uncaught SyntaxError: Unexpected identifier
+> var nestedStr = "welcome to \"javascript\" tutorial";
+undefined
+> nestedStr
+'welcome to "javascript" tutorial'
+> color1.length
+3
+> color2.length
+5
+> color1.toUpperCase();
+'RED'
+> var color3 = "green RED";
+undefined
+> color3
+'green RED'
+> color3.toLowerCase();
+'green red'
+> color3 = " green RED ";
+' green RED '
+> color3.trim()
+'green RED'
+>
+> var word = "welcome to javascript course";
+undefined
+> word
+'welcome to javascript course'
+> word.startsWith('wel');
+true
+> word.startsWith('abc');
+false
+>
+> word.substr(0,2);
+'we'
+>
+> word.substr(2);
+'lcome to javascript course'
+>
+> word.replace('o','x');
+'welcxme to javascript course'
+>
+> word.replaceAll('o','x');
+'welcxme tx javascript cxurse'
+>
+>
+> word.
+word.__proto__             word.hasOwnProperty
+word.isPrototypeOf         word.propertyIsEnumerable
+word.toLocaleString
+
+word.anchor                word.at
+word.big                   word.blink
+word.bold                  word.charAt
+word.charCodeAt            word.codePointAt
+word.concat                word.constructor
+word.endsWith              word.fixed
+word.fontcolor             word.fontsize
+word.includes              word.indexOf
+word.italics               word.lastIndexOf
+word.length                word.link
+word.localeCompare         word.match
+word.matchAll              word.normalize
+word.padEnd                word.padStart
+word.repeat                word.replace
+word.replaceAll            word.search
+word.slice                 word.small
+word.split                 word.startsWith
+word.strike                word.sub
+word.substr                word.substring
+word.sup                   word.toLocaleLowerCase
+word.toLocaleUpperCase     word.toLowerCase
+word.toString              word.toUpperCase
+word.trim                  word.trimEnd
+word.trimLeft              word.trimRight
+word.trimStart             word.valueOf
+
+====================
+Numbers & Booleans
+====================
+> var number1 = 10;
+undefined
+> number1
+10
+> var number2 = -20;
+undefined
+> var number3 = 30.123;
+undefined
+> number2
+-20
+> number3
+30.123
+> number1 + number3
+40.123000000000005
+> number1 - number3
+-20.123
+>
+> number1 * number3
+301.23
+>
+> number1 / 2;
+5
+> number % 2
+Uncaught ReferenceError: number is not defined
+> number % 2;
+Uncaught ReferenceError: number is not defined
+> number1 % 2;
+0
+>
+>
+> var word = "javascript tutorial";
+undefined
+> number1.toString() + ":"+ word
+'10:javascript tutorial'
+>
+>
+>
+> var isButtonClicked = true;
+undefined
+> isButtonClicked
+true
+> isButtonClicked = false;
+false
+>
+>
+> number1 === number3
+false
+> number3 = 10;
+10
+> number1
+10
+> number1 === number3
+true
+>
+> var word1 = "javascript";
+undefined
+> var word2 = "javascript";
+undefined
+>
+> word1 === word2
+true
+> word2 ="test";
+'test'
+> word1 === word2
+false
+>
+=====================
+Objects
+
+> var car = {};
+undefined
+> car
+{}
+> var car = {
+... color : "blue",
+... brand : "benz",
+... price : 500000
+... };
+undefined
+> car
+{ color: 'blue', brand: 'benz', price: 500000 }
+>
+> car.brand;
+'benz'
+> car.color;
+'blue'
+> car["brand"]
+'benz'
+>
+>
+> car.color = "red";
+'red'
+> car
+{ color: 'red', brand: 'benz', price: 500000 }
+> car.brand = "audi";
+'audi'
+> car
+{ color: 'red', brand: 'audi', price: 500000 }
+>
+> car["color"] = "green";
+'green'
+> car
+{ color: 'green', brand: 'audi', price: 500000 }
+>
+>
+> delete car.price;
+true
+> car
+{ color: 'green', brand: 'audi' }
+> delete car.brand;
+true
+> car;
+{ color: 'green' }
+>
+
+===============
+Arrays
+
+>
+> var colors = [
+... "blue",
+... "white",
+... "red",
+... 2000];
+undefined
+> colors
+[ 'blue', 'white', 'red', 2000 ]
+> colors.length;
+4
+> colors[1];
+'white'
+> colors[2]
+'red'
+> colors[colors.length-1];
+2000
+>
+> colors.push("green");
+5
+> colors
+[ 'blue', 'white', 'red', 2000, 'green' ]
+>
+>
+> colors.pop();
+'green'
+> colors
+[ 'blue', 'white', 'red', 2000 ]
+>
+>
+> colors.reverse();
+[ 2000, 'red', 'white', 'blue' ]
+>
+>
+> var weekEnds = [
+... "saturday",
+... "sunday"];
+undefined
+> weekEnds;
+[ 'saturday', 'sunday' ]
+>
+> colors.concat(weekEnds);
+[ 2000, 'red', 'white', 'blue', 'saturday', 'sunday' ]
+>
+>
+
+================
+Regular Expressions
+
+>
+> var word = "welcome to javascript tutorial full course";
+undefined
+> word;
+'welcome to javascript tutorial full course'
+>
+> var regex = /javascript/;
+undefined
+> regex.test(word);
+true
+> var regex = /JAVAscript/;
+undefined
+> regex.test(word);
+false
+> var regex = /JAVAscript/i;
+undefined
+> regex.test(word);
+true
+>
+> var regex = /^welcome/i;
+undefined
+> regex.test(word);
+true
+> var regex = /^java/i;
+undefined
+> regex.test(word);
+false
+>
+> var regex = /course$/i;
+undefined
+> regex.test(word);
+true
+> var regex = /courses$/i;
+undefined
+> regex.test(word);
+false
+>
+
+================
+Arithmatic operators, increment & decrement operators
+
+>
+> let number1 = 10, number2 = 5;
+undefined
+> number1;
+10
+> number2;
+5
+> number1 + number2;
+15
+> number1 - number2;
+5
+> number1 * number2;
+50
+> number1 / number2;
+2
+> number1 % number2;
+0
+>
+>
+> var words = "welcome to";
+undefined
+> var words = "javascript tutorial";
+undefined
+> var word1 = "welcome to";
+undefined
+> var word2 = "javascript tutorial";
+undefined
+>
+> word1 +" "+ word2
+'welcome to javascript tutorial'
+>
+>
+> number1 % number2;
+0
+> number1 % number2 === 0;
+true
+>
+> number1 % 3 === 0;
+false
+>
+>
+>
+> let count = 0;
+undefined
+> count;
+0
+> count = count + 1;
+1
+> count;
+1
+>
+> count += 1;
+2
+> count;
+2
+>
+> count++;
+2
+> count;
+3
+>
+> count = count - 1;
+2
+> count;
+2
+> count -= 1;
+1
+> count;
+1
+>
+> count--;
+1
+> count;
+0
+>
+
+==================
+Logical Operators
+
+>
+> let color1 = "red", color2 = "blue", color3 = "green";
+undefined
+> color1
+'red'
+> color2
+'blue'
+> color3
+'green'
+> color1 === 'red'
+true
+> color1 === 'red' || color2 === 'blue'
+true
+> color1 === 'red' || color2 === 'abc'
+true
+> color1 === 'xyz' || color2 === 'abc'
+false
+>
+>
+> color1 === 'red' &&  color2 === 'blue'
+true
+> color1 === 'red' &&  color2 === 'abc'
+false
+> color1 === 'xyz' &&  color2 === 'abc'
+false
+>
+> (color1 === 'red' ||  color2 === 'blue') && color3 === 'green'
+true
+>
+>
+
+=====================
+if, if else, if else if
+
+confirm("press a button!");
+true
+confirm("press a button!");
+false
+if(confirm("press a button!")) {
+    console.log("you pressed Ok!");
+}
+you pressed Ok!
+
+if(confirm("press a button!")) {
+    console.log("you pressed Ok!");
+}
+
+if(confirm("press a button!")) {
+    console.log("you pressed Ok!");
+} else {
+    console.log("you pressed Cancel!");
+}
+you pressed Ok!
+
+if(confirm("press a button!")) {
+    console.log("you pressed Ok!");
+} else {
+    console.log("you pressed Cancel!");
+}
+ you pressed Cancel!
+
+if(confirm("press a button!")) {
+    console.log("you pressed Ok!");
+} else if(true) {
+    console.log("you pressed Cancel!");
+}
+ you pressed Cancel!
+
+=====================================
+Switch Statement
+
+let skill;
+undefined
+switch(skill) {
+    case "javascript":
+        console.log("welcome to javascript");
+        break;
+    case "python":
+        console.log("welcome to python");
+        break;
+    case "java":
+        console.log("welcome to java");
+        break;
+    default:
+        console.log("Skill not found!");
+        break;
+}
+Skill not found!
+
+skill = "python";
+'python'
+switch(skill) {
+    case "javascript":
+        console.log("welcome to javascript");
+        break;
+    case "python":
+        console.log("welcome to python");
+        break;
+    case "java":
+        console.log("welcome to java");
+        break;
+    default:
+        console.log("Skill not found!");
+        break;
+}
+welcome to python
+
+skill = "javascript";
+'javascript'
+switch(skill) {
+    case "javascript":
+        console.log("welcome to javascript");
+        break;
+    case "python":
+        console.log("welcome to python");
+        break;
+    case "java":
+        console.log("welcome to java");
+        break;
+    default:
+        console.log("Skill not found!");
+        break;
+}
+welcome to javascript
+
+=====================
+One line if statement & Ternary operator
+
+confirm("press a button!");
+true
+confirm("press a button!");
+false
+if(confirm("press a button!")) console.log("you pressed Ok!");
+ you pressed Ok!
+
+if(confirm("press a button!")) console.log("you pressed Ok!");
+undefined
+confirm("press a button!");
+true
+confirm("press a button!") ? console.log("you pressed Ok!") : console.log("you pressed Cancel!")
+you pressed Ok!
+
+confirm("press a button!") ? console.log("you pressed Ok!") : console.log("you pressed Cancel!")
+you pressed Cancel!
+
+============================
+
